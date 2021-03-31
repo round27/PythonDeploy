@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}   
+{% block content %}   
+        <form action="">
+            <div class="card w-75">
+                <div class="card-header bg-warning text-dark" >
+                  View Student
+                </div>
+                <div class="card-body">                  
+                    <div class="form-grow row">
+                        <label for="id" class="col-sm-2 col-form-label">Id Number</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="id",id="id_id" value="{{ student.id }}">
+                        </div>
+                    </div>
+                    <div class="form-grow row">
+                        <label for="name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="name",id="id_name" value="{{ student.name }}">
+                        </div>
+                    </div>
+                    <div class="form-grow row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="email",id="id_email" value="{{ student.email }}">
+                        </div>
+                    </div>
+                    <div class="form-grow row">
+                        <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="dob",id="id_dob" value="{{ student.dob }}">
+                        </div>
+                    </div>
+                    <div class="form-grow row">
+                        <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="gender",id="id_gender" value="{{ student.gender }}">
+                        </div>
+                    </div>
+                    <div class="form-grow row">
+                        <label for="gender" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-6">
+                            <a href="{%  url 'student:home' %}" class="btn btn-primary">Back</a>
+                        </div>
+                    </div>
+                </div>
+              </div>          
+                       
+        </form>
+{% endblock %}

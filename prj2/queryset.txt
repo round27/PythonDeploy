@@ -1,0 +1,69 @@
+python manage.py shell
+
+from myapp.models import Student
+
+Student.objects.all() 
+Student.objects.get(id=11) 
+Student.objects.get(name__exact='Jose Moss') 
+Student.objects.get(name__iexact='jose moss') 
+Student.objects.get(name__iexact='carl Thomas') 
+
+Student.objects.filter(name__startswith='car') 
+Student.objects.filter(name__startswith='n') 
+Student.objects.filter(name__endswith='h') 
+
+Student.objects.filter(name__contains='berly') 
+
+Student.objects.filter(id__in =[1,5,11]) 
+Student.objects.filter(id__gt =200) 
+Student.objects.filter(id__lt =10) 
+
+Student.objects.filter(id__gte =200) 
+Student.objects.filter(id__lte =10)
+
+Student.objects.values()
+Student.objects.values('id','name')
+Student.objects.values('name','dob')
+
+
+std1=Student.objects.create(name='N.S. Lipi',email='lipi@gmail.com',dob='1994-12-15')
+std1=Student.objects.get_or_create(name='N.S. Lipi',email='lipi@gmail.com',dob='1994-12-15')
+
+std2=Student(name='N.S. Zahid',email='zahid@gmail.com',dob='1994-12-15')
+std2.save()
+
+Student.objects.filter(pk=328).update(name='Sweet Zahid')
+
+Student.objects.filter(pk=328).delete()
+
+for x in Student.objects.raw('select id, name from myapp_student'):
+    print(x.name)
+
+
+Student.objects.order_by('name')
+Student.objects.order_by('-name')
+Student.objects.order_by('-id')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
